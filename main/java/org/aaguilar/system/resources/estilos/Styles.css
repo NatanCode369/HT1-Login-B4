@@ -1,0 +1,52 @@
+.contenedor-main{
+    -fx-background-color: #153C6E;
+    -fx-background-radius: 30;
+}
+
+.contenedor-principal{
+    -fx-background-color: #b9bcda;
+    -fx-background-radius: 30;
+}
+
+.link-label {
+    -fx-text-fill: #1976D2;
+    -fx-font-size: 15px;
+}
+
+.link-label:hover{
+    -fx-underline: true;
+    -fx-text-fill: #1565C0;
+}
+
+.root {
+    -fx-font-family: "Segoe UI", Helvetica, Arial, sans-serif;
+    -fx-base: #f4f6f9;
+}
+
+.label {
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #5b98a6;
+}
+
+.tituloFormulario {
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #2c3e50;
+}
+
+.text-field {
+    -fx-background-color: #ffffff;
+    -fx-background-radius: 5px;
+    -fx-border-color: #bdc3c7;
+    -fx-border-radius: 5px;
+    -fx-border-width: 1px;
+    -fx-padding: 8px 12px;
+    -fx-prompt-text-fill: #95a5a6;
+}
+
+.text-field:focused {
+    -fx-border-color: #3498db;
+    -fx-background-color: #ffffff;
+    -fx-effect: dropshadow(three-pass-box, rgba(52, 152, 219, 0.3), 5, 0, 0, 0);
+}
