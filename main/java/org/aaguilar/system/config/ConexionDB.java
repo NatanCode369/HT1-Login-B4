@@ -12,10 +12,6 @@ public class ConexionDB {
         return connection;
     }
 
-    public void setConnection(Connection connection) {
-        this.connection = connection;
-    }
-
     public ConexionDB() {
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
