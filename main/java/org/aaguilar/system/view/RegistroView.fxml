@@ -17,56 +17,51 @@
 <?import javafx.scene.text.Font?>
 
 <VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="450.0" spacing="10.0" styleClass="contenedor-main" stylesheets="@../resources/estilos/Styles.css" xmlns="http://javafx.com/javafx/21.0.1" xmlns:fx="http://javafx.com/fxml/1">
-   <children>
-      <ImageView fitHeight="200.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" VBox.vgrow="ALWAYS">
-         <viewport>
+    <padding>
+        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+    </padding>
+    <ImageView fitHeight="112.0" fitWidth="239.0" pickOnBounds="true" preserveRatio="true" VBox.vgrow="ALWAYS">
+        <viewport>
             <Rectangle2D />
-         </viewport>
-         <image>
-            <Image url="@../resources/images/kaoruko-waguri-waguri-kaoruko.gif" />
-         </image>
-          <clip>
-              <Circle centerY="50" centerX="75" radius="200" />
-          </clip>
-      </ImageView>
-      <GridPane alignment="CENTER" prefHeight="177.0" prefWidth="346.0" styleClass="grid" VBox.vgrow="SOMETIMES">
+        </viewport>
+        <clip>
+            <Circle centerX="55" centerY="60" radius="60" />
+        </clip>
+        <Image url="@../resources/images/kaoruko-waguri-waguri-kaoruko.gif" />
+    </ImageView>
+    <GridPane alignment="CENTER" prefHeight="177.0" prefWidth="346.0" styleClass="grid" VBox.vgrow="SOMETIMES">
         <columnConstraints>
-          <ColumnConstraints hgrow="SOMETIMES" maxWidth="193.0" minWidth="10.0" prefWidth="160.0" />
-          <ColumnConstraints hgrow="SOMETIMES" maxWidth="259.0" minWidth="10.0" prefWidth="240.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="193.0" minWidth="10.0" prefWidth="160.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="259.0" minWidth="10.0" prefWidth="240.0" />
         </columnConstraints>
         <rowConstraints>
-          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
         </rowConstraints>
-         <children>
-            <TextField promptText="Ej: 1122-3344" GridPane.columnIndex="1" GridPane.rowIndex="4" />
-            <Label text="Nombre" />
-            <Label text="Apellidos" GridPane.rowIndex="1" />
-            <Label text="Correo" GridPane.rowIndex="2" />
-            <Label alignment="CENTER" contentDisplay="CENTER" text="Telefóno" GridPane.rowIndex="4" />
-            <Label text="Contraseña" GridPane.rowIndex="5" />
-            <Label text="Confirmar Contraseña" wrapText="true" GridPane.rowIndex="6" />
-            <TextField prefHeight="25.0" prefWidth="238.0" promptText="Ej: Andrew Fel" styleClass="text-field" GridPane.columnIndex="1" />
-            <TextField promptText="Ej: Coj Gonzales" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-            <TextField promptText="Ej: user123@example.com" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-            <PasswordField promptText="Ej: A1B2C3" GridPane.columnIndex="1" GridPane.rowIndex="5" />
-            <PasswordField prefHeight="13.0" prefWidth="196.0" promptText="Ej: A1B2C3" GridPane.columnIndex="1" GridPane.rowIndex="6" />
-            <Label text="Username" GridPane.rowIndex="3" />
-            <TextField promptText="Ej: user123" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-         </children>
-      </GridPane>
-      <Hyperlink styleClass="link-label" text="¿Ya tienes una cuenta? Inicia Sesión" />
-      <Button mnemonicParsing="false" prefHeight="35.0" prefWidth="275.0" text="Registrarse">
-         <font>
-            <Font name="Segoe UI Bold" size="18.0" />
-         </font></Button>
-   </children>
-   <padding>
-      <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
-   </padding>
+        <TextField fx:id="textFieldTelefono" promptText="Ej: 1122-3344" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+        <Label text="Nombre" />
+        <Label text="Apellidos" GridPane.rowIndex="1" />
+        <Label text="Correo" GridPane.rowIndex="2" />
+        <Label alignment="CENTER" contentDisplay="CENTER" text="Telefóno" GridPane.rowIndex="4" />
+        <Label text="Contraseña" GridPane.rowIndex="5" />
+        <Label text="Confirmar Contraseña" wrapText="true" GridPane.rowIndex="6" />
+        <TextField fx:id="textFieldNombre" prefHeight="25.0" prefWidth="238.0" promptText="Ej: Andrew Fel" styleClass="text-field" GridPane.columnIndex="1" />
+        <TextField fx:id="textFieldLastName" promptText="Ej: Coj Gonzales" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+        <TextField fx:id="textFieldCorreo" promptText="Ej: user123@example.com" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+        <PasswordField fx:id="passwordFieldContraseña" promptText="Ej: A1B2C3" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+        <PasswordField fx:id="passwordFieldCofirmarContraseña" prefHeight="13.0" prefWidth="196.0" promptText="Ej: A1B2C3" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+        <Label text="Username" GridPane.rowIndex="3" />
+        <TextField fx:id="textFieldUsername" promptText="Ej: user123" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+    </GridPane>
+    <Hyperlink styleClass="link-label" text="¿Ya tienes una cuenta? Inicia Sesión" />
+    <Button fx:id="btnRegistro" mnemonicParsing="false" prefHeight="35.0" prefWidth="275.0" text="Registrarse">
+        <font>
+          <Font name="Segoe UI Bold" size="18.0" />
+        </font>
+    </Button>
 </VBox>
