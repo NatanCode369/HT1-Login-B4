@@ -20,18 +20,18 @@ public class ControllerRegistro {
     @FXML
     private void validacionesCampos() {
 
-        if ((textFieldNombre.getText().isEmpty() || textFieldLastName.getText().isEmpty()) &&
-                (textFieldUsername.getText().isEmpty() || textFieldUsername.getText().isBlank()) &&
-                (textFieldCorreo.getText().isEmpty() || textFieldCorreo.getText().isBlank()) &&
-                (textFieldTelefono.getText().isEmpty() || textFieldTelefono.getText().isBlank()) &&
-                (passwordField.getText().isEmpty() || passwordField.getText().isBlank()) &&
+        if ((textFieldNombre.getText().isEmpty() || textFieldLastName.getText().isEmpty()) ||
+                (textFieldUsername.getText().isEmpty() || textFieldUsername.getText().isBlank()) ||
+                (textFieldCorreo.getText().isEmpty() || textFieldCorreo.getText().isBlank()) ||
+                (textFieldTelefono.getText().isEmpty() || textFieldTelefono.getText().isBlank()) ||
+                (passwordField.getText().isEmpty() || passwordField.getText().isBlank()) ||
                 (passwordField.getText().isEmpty() || passwordField.getText().isBlank()))
             message.alertaErrorFormulario(
                     "Campos Obligatorios",
                     "Debe llenar los campos con letras o valores númericos."
             );
 
-        if (validaciones.validarCorreo(textFieldCorreo.getText()))
+        if (!validaciones.validarCorreo(textFieldCorreo.getText()))
             message.alertaAdvertenciaFormulario(
                     "Email no válido",
                     """
@@ -41,7 +41,7 @@ public class ControllerRegistro {
                            \s"""
             );
 
-        if (validaciones.validarTelefono(textFieldTelefono.getText()))
+        if (!validaciones.validarTelefono(textFieldTelefono.getText()))
             message.alertaAdvertenciaFormulario(
                     "Teléfono no válido",
                     "No puede ingresar letras en el número de teléfono, únicamente números."
@@ -56,6 +56,6 @@ public class ControllerRegistro {
 
     @FXML
     private void cambiarFormulario() {
-        FactoryView.getInstancia().registroView();
+        FactoryView.getInstancia().loginView();
     }
 }

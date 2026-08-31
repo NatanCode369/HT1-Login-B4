@@ -13,7 +13,7 @@ public class ControllerLogin {
 
     @FXML
     private void validacionesCampos() {
-        if ((textFieldUsername.getText().isEmpty() || textFieldUsername.getText().isBlank()) &&
+        if ((textFieldUsername.getText().isEmpty() || textFieldUsername.getText().isBlank()) ||
                 (passwordField.getText().isEmpty() || passwordField.getText().isBlank()))
             message.alertaAdvertenciaFormulario(
                     "Campos Obligatorios",
@@ -23,6 +23,6 @@ public class ControllerLogin {
     }
     @FXML
     private void cambiarFormulario() {
-        FactoryView.getInstancia().loginView();
+        FactoryView.getInstancia().registroView();
     }
 }

@@ -14,7 +14,7 @@ import java.util.Objects;
 
 
 public class FactoryView {
-    private final String PATH_VIEWS = "/org/aaguilar/view/";
+    private final String PATH_VIEWS = "/org/aaguilar/system/view/";
     private static FactoryView instanciFactoryView;
 
     public static FactoryView getInstancia() {
@@ -66,8 +66,20 @@ public class FactoryView {
                     SceneManager.getInstanciaSceneManager().getPrimaryStage().getIcons().add(
                             new Image(Objects.requireNonNull(Main.class.getResourceAsStream("kaoruko-smiling.gif")))
                     );
+
+                    scene = cargarArchivoFXML("RegistroView.fxml", 400, 550);
                 }
-                default -> scene = cargarArchivoFXML("RegistroView.fxml", 400, 550);
+                case "menu" -> {
+                    SceneManager.getInstanciaSceneManager().getPrimaryStage().setTitle("Menu Plataforma");
+                    SceneManager.getInstanciaSceneManager().getPrimaryStage().setResizable(false);
+                    SceneManager.getInstanciaSceneManager().getPrimaryStage().initStyle(StageStyle.TRANSPARENT);
+                    SceneManager.getInstanciaSceneManager().getPrimaryStage().getIcons().add(
+                            new Image(Objects.requireNonNull(Main.class.getResourceAsStream("logo.png")))
+                    );
+
+                    scene = cargarArchivoFXML("MainMenuView.fxml", 900, 700);
+                }
+                default -> scene = cargarArchivoFXML("LoginView.fxml", 400, 550);
             }
             SceneManager.getInstanciaSceneManager().cambiarScene(scene);
         } catch (NullPointerException exception) {
