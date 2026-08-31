@@ -4,6 +4,8 @@ import com.mysql.cj.jdbc.CallableStatement;
 import org.aaguilar.system.config.ConexionDB;
 import org.aaguilar.system.model.User;
 
+import java.sql.SQLException;
+
 public class UserRepository implements UserInterface {
 
     //objeto de tipo ConexionDB para hacer la conexión a la DB
@@ -20,7 +22,7 @@ public class UserRepository implements UserInterface {
             // objeto de tipo CallableStatement para llamar al procedimiento almacenado de la DB
             CallableStatement callableStatement = (CallableStatement) conexionDB
                     .getConnection()
-                    .prepareCall("{ CALL sp_create_users(?, ?, ?, ?, ?)}");
+                    .prepareCall("{ CALL sp_create_users(?, ?, ?, ?, ?); }");
 
             callableStatement.setString(1, usuario.getName());
             callableStatement.setString(2, usuario.getLastName());
@@ -30,7 +32,24 @@ public class UserRepository implements UserInterface {
             callableStatement.execute();
             callableStatement.close();
 
-        } catch (Exception e) {
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
+    }
+
+    @Override
+    public void login(User usuario) {
+        try {
+            CallableStatement callableStatement = (CallableStatement) conexionDB
+                    .getConnection()
+                    .prepareCall("{ CALL sp_login_user(?, ?); }");
+
+            callableStatement.setString(1, usuario.getUserName());
+            callableStatement.setString(1, usuario.getPassword());
+            callableStatement.execute();
+            callableStatement.close();
+
+        } catch (SQLException e) {
             System.out.println(e.getMessage());
         }
     }
