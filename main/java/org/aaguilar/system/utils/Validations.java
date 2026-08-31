@@ -26,9 +26,10 @@ public class Validations {
                 countArrobe++;
                 indexArrobe = i;
 
-            } else if (email.charAt(indexArrobe) == '.' && indexArrobe != -1 && i > indexArrobe + 1) countPeriod++;
+            } else if (email.charAt(indexArrobe) == '.' && (indexArrobe != -1 && i > indexArrobe + 1))
+                countPeriod++;
         }
-        return countArrobe == 1 && (countPeriod >= 1 && countPeriod <= 2);
+        return countArrobe == 1 && (countPeriod >= 1 && countPeriod <= 3);
     }
 
     public boolean validarPassword(PasswordField password, PasswordField confirmarPassword) {

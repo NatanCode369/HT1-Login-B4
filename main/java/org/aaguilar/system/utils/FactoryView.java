@@ -14,7 +14,6 @@ import java.util.Objects;
 
 
 public class FactoryView {
-    private final String PATH_VIEWS = "/org/aaguilar/system/view/";
     private static FactoryView instanciFactoryView;
 
     public static FactoryView getInstancia() {
@@ -24,6 +23,7 @@ public class FactoryView {
     }
 
     public Scene cargarArchivoFXML(String fxmlName, double width, double height) {
+        String PATH_VIEWS = "/org/aaguilar/system/view/";
         String rutaArchivoFXML = PATH_VIEWS + fxmlName;
 
         try {
