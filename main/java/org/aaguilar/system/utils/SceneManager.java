@@ -2,7 +2,6 @@ package org.aaguilar.system.utils;
 
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-import javafx.stage.StageStyle;
 
 public class SceneManager {
     private static SceneManager instanciaSceneManager;

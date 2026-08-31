@@ -15,6 +15,13 @@ import java.util.Objects;
 
 public class FactoryView {
     private final String PATH_VIEWS = "/org/aaguilar/view/";
+    private static FactoryView instanciFactoryView;
+
+    public static FactoryView getInstancia() {
+        if (instanciFactoryView == null)
+            instanciFactoryView = new FactoryView();
+        return instanciFactoryView;
+    }
 
     public Scene cargarArchivoFXML(String fxmlName, double width, double height) {
         String rutaArchivoFXML = PATH_VIEWS + fxmlName;
@@ -47,12 +54,20 @@ public class FactoryView {
                     SceneManager.getInstanciaSceneManager().getPrimaryStage().setResizable(false);
                     SceneManager.getInstanciaSceneManager().getPrimaryStage().initStyle(StageStyle.TRANSPARENT);
                     SceneManager.getInstanciaSceneManager().getPrimaryStage().getIcons().add(
-                            new Image(Objects.requireNonNull(Main.class.getResourceAsStream("asdf")))
+                            new Image(Objects.requireNonNull(Main.class.getResourceAsStream("descarga1.jpg")))
                     );
 
                     scene = cargarArchivoFXML("LoginView.fxml", 400, 550);
                 }
-                default -> scene = cargarArchivoFXML("LoginView.fxml", 400, 550);
+                case "registro" -> {
+                    SceneManager.getInstanciaSceneManager().getPrimaryStage().setTitle("Registro Plataforma");
+                    SceneManager.getInstanciaSceneManager().getPrimaryStage().setResizable(false);
+                    SceneManager.getInstanciaSceneManager().getPrimaryStage().initStyle(StageStyle.TRANSPARENT);
+                    SceneManager.getInstanciaSceneManager().getPrimaryStage().getIcons().add(
+                            new Image(Objects.requireNonNull(Main.class.getResourceAsStream("kaoruko-smiling.gif")))
+                    );
+                }
+                default -> scene = cargarArchivoFXML("RegistroView.fxml", 400, 550);
             }
             SceneManager.getInstanciaSceneManager().cambiarScene(scene);
         } catch (NullPointerException exception) {
@@ -62,5 +77,9 @@ public class FactoryView {
 
     public void loginView() {
         loadScene("login");
+    }
+
+    public void registroView() {
+        loadScene("registro");
     }
 }
