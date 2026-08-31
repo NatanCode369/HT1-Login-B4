@@ -2,6 +2,8 @@ package org.aaguilar.system.controller;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
+import org.aaguilar.system.model.User;
+import org.aaguilar.system.repository.UserRepository;
 import org.aaguilar.system.utils.AlertInformation;
 import org.aaguilar.system.utils.FactoryView;
 import org.aaguilar.system.utils.Validations;
@@ -16,6 +18,7 @@ public class ControllerRegistro {
     @FXML private PasswordField passwordFieldConfirmar;
     protected Validations validaciones = new Validations();
     private final AlertInformation message = new AlertInformation();
+    private UserRepository userRepository = new UserRepository();
 
     @FXML
     private void validacionesCampos() {
@@ -52,6 +55,15 @@ public class ControllerRegistro {
                     "Las contraseñas no coinciden",
                     "Asegúrese de haber ingresado correctamente su contraseña en ambos campos."
             );
+
+        User usuario = new User(
+                textFieldNombre.getText(),
+                textFieldCorreo.getText(),
+                textFieldLastName.getText(),
+                textFieldUsername.getText(),
+                passwordFieldConfirmar.getText()
+        );
+        userRepository.create(usuario);
     }
 
     @FXML
