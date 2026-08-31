@@ -18,13 +18,6 @@ public class User {
         this.password = password;
     }
 
-    public User(String name, String lastName, String email, String userName) {
-        this.name = name;
-        this.lastName = lastName;
-        this.email = email;
-        this.userName = userName;
-    }
-
     public String getName() {
         return name;
     }
