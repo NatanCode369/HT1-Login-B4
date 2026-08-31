@@ -1,5 +1,7 @@
 package org.aaguilar.system.utils;
 
+import javafx.scene.control.PasswordField;
+
 public class Validations {
     public Validations() {
     }
@@ -27,5 +29,9 @@ public class Validations {
             } else if (email.charAt(indexArrobe) == '.' && indexArrobe != -1 && i > indexArrobe + 1) countPeriod++;
         }
         return countArrobe == 1 && (countPeriod >= 1 && countPeriod <= 2);
+    }
+
+    public boolean validarPassword(PasswordField password, PasswordField confirmarPassword) {
+        return password.getText().equals(confirmarPassword.getText());
     }
 }
