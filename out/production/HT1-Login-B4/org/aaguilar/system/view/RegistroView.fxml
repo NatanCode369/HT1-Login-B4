@@ -58,8 +58,8 @@
         <Label text="Username" GridPane.rowIndex="3" />
         <TextField fx:id="textFieldUsername" promptText="Ej: user123" GridPane.columnIndex="1" GridPane.rowIndex="3" />
     </GridPane>
-    <Hyperlink fx:id="linkCambioFormulario" onAction="#cambiarFormulario" styleClass="link-label" text="¿Ya tienes una cuenta? Inicia Sesión" />
-    <Button fx:id="btnRegistro" mnemonicParsing="false" onAction="#validacionesCampos" prefHeight="35.0" prefWidth="275.0" text="Registrarse">
+    <Hyperlink onAction="#cambiarFormulario" styleClass="link-label" text="¿Ya tienes una cuenta? Inicia Sesión" />
+    <Button mnemonicParsing="false" onAction="#validacionesCampos" prefHeight="35.0" prefWidth="275.0" text="Registrarse">
         <font>
           <Font name="Segoe UI Bold" size="18.0" />
         </font>

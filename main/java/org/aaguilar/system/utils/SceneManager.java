@@ -29,7 +29,7 @@ public class SceneManager {
             primaryStage.sizeToScene();
             primaryStage.show();
         } catch (NullPointerException exception) {
-            System.out.println(exception.getMessage());
+            exception.printStackTrace();
         }
     }
 

@@ -27,5 +27,12 @@ BEGIN
 end $$
 DELIMITER ;
 
+DELIMITER $$
+CREATE PROCEDURE sp_login_user(IN name_p VARCHAR(25), IN password_p(50))
+BEGIN
+    SELECT * FROM User WHERE name = name_p AND password = password_p;
+END $$
+DELIMITER ;
+
 # Llamada de pruebadel procedimiento almacenado
 CALL sp_create_users("Natanael", "Aguilar", "na@gmail.com", "na", "A1B2C3");

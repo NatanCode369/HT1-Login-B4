@@ -4,11 +4,10 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.JavaFXBuilderFactory;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
-import javafx.stage.StageStyle;
+import org.aaguilar.system.Launcher;
 import org.aaguilar.system.Main;
 
 import java.io.IOException;
-import java.io.UncheckedIOException;
 import java.net.URL;
 import java.util.Objects;
 
@@ -35,15 +34,17 @@ public class FactoryView {
               y se llamará al archivo main
              */
 
-            URL url = Main.class.getResource(rutaArchivoFXML);
+            URL url = Launcher.class.getResource(rutaArchivoFXML);
             fxmlLoader.setBuilderFactory(new JavaFXBuilderFactory());
             fxmlLoader.setLocation(url);
 
             return new Scene(fxmlLoader.load(), width, height);
         } catch (IOException exception) {
-            throw new UncheckedIOException(exception);
+            System.out.println(exception.getMessage());
         }
+        return null;
     }
+
 
     public void loadScene(String fxmlname) {
         Scene scene = null;
@@ -52,9 +53,11 @@ public class FactoryView {
                 case "login" -> {
                     SceneManager.getInstanciaSceneManager().getPrimaryStage().setTitle("Login Plataforma");
                     SceneManager.getInstanciaSceneManager().getPrimaryStage().setResizable(false);
-                    SceneManager.getInstanciaSceneManager().getPrimaryStage().initStyle(StageStyle.TRANSPARENT);
+                    //SceneManager.getInstanciaSceneManager().getPrimaryStage().initStyle(StageStyle.UNDECORATED);
                     SceneManager.getInstanciaSceneManager().getPrimaryStage().getIcons().add(
-                            new Image(Objects.requireNonNull(Main.class.getResourceAsStream("descarga1.jpg")))
+                            new Image(Objects.requireNonNull(
+                                    Main.class.getResourceAsStream("/org/aaguilar/system/resources/images/descarga1.jpg")
+                            ))
                     );
 
                     scene = cargarArchivoFXML("LoginView.fxml", 400, 550);
@@ -62,9 +65,9 @@ public class FactoryView {
                 case "registro" -> {
                     SceneManager.getInstanciaSceneManager().getPrimaryStage().setTitle("Registro Plataforma");
                     SceneManager.getInstanciaSceneManager().getPrimaryStage().setResizable(false);
-                    SceneManager.getInstanciaSceneManager().getPrimaryStage().initStyle(StageStyle.TRANSPARENT);
+                    //SceneManager.getInstanciaSceneManager().getPrimaryStage().initStyle(StageStyle.UNDECORATED);
                     SceneManager.getInstanciaSceneManager().getPrimaryStage().getIcons().add(
-                            new Image(Objects.requireNonNull(Main.class.getResourceAsStream("kaoruko-smiling.gif")))
+                            new Image(Objects.requireNonNull(Main.class.getResourceAsStream("/org/aaguilar/system/resources/images/kaoruko-smiling.gif")))
                     );
 
                     scene = cargarArchivoFXML("RegistroView.fxml", 400, 550);
@@ -72,9 +75,9 @@ public class FactoryView {
                 case "menu" -> {
                     SceneManager.getInstanciaSceneManager().getPrimaryStage().setTitle("Menu Plataforma");
                     SceneManager.getInstanciaSceneManager().getPrimaryStage().setResizable(false);
-                    SceneManager.getInstanciaSceneManager().getPrimaryStage().initStyle(StageStyle.TRANSPARENT);
+                    //SceneManager.getInstanciaSceneManager().getPrimaryStage().initStyle(StageStyle.UNDECORATED);
                     SceneManager.getInstanciaSceneManager().getPrimaryStage().getIcons().add(
-                            new Image(Objects.requireNonNull(Main.class.getResourceAsStream("logo.png")))
+                            new Image(Objects.requireNonNull(Main.class.getResourceAsStream("/org/aaguilar/system/resources/images/logo.png")))
                     );
 
                     scene = cargarArchivoFXML("MainMenuView.fxml", 900, 700);
@@ -83,7 +86,7 @@ public class FactoryView {
             }
             SceneManager.getInstanciaSceneManager().cambiarScene(scene);
         } catch (NullPointerException exception) {
-            System.out.println(exception.getMessage());
+            exception.printStackTrace();
         }
     }
 
