@@ -4,6 +4,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.JavaFXBuilderFactory;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
+import javafx.stage.StageStyle;
 import org.aaguilar.system.Launcher;
 import org.aaguilar.system.Main;
 
@@ -53,7 +54,7 @@ public class FactoryView {
                 case "login" -> {
                     SceneManager.getInstanciaSceneManager().getPrimaryStage().setTitle("Login Plataforma");
                     SceneManager.getInstanciaSceneManager().getPrimaryStage().setResizable(false);
-                    //SceneManager.getInstanciaSceneManager().getPrimaryStage().initStyle(StageStyle.UNDECORATED);
+                    //SceneManager.getInstanciaSceneManager().getPrimaryStage().initStyle(StageStyle.DECORATED);
                     SceneManager.getInstanciaSceneManager().getPrimaryStage().getIcons().add(
                             new Image(Objects.requireNonNull(
                                     Main.class.getResourceAsStream("/org/aaguilar/system/resources/images/descarga1.jpg")
@@ -80,13 +81,13 @@ public class FactoryView {
                             new Image(Objects.requireNonNull(Main.class.getResourceAsStream("/org/aaguilar/system/resources/images/logo.png")))
                     );
 
-                    scene = cargarArchivoFXML("MainMenuView.fxml", 900, 700);
+                    scene = cargarArchivoFXML("MainMenu.fxml", 900, 700);
                 }
                 default -> scene = cargarArchivoFXML("LoginView.fxml", 400, 550);
             }
             SceneManager.getInstanciaSceneManager().cambiarScene(scene);
         } catch (NullPointerException exception) {
-            exception.printStackTrace();
+            exception.getMessage();
         }
     }
 

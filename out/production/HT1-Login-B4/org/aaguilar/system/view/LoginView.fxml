@@ -13,7 +13,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<fx:root alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="550.0" prefWidth="400.0" spacing="20.0" style="-fx-border-radius: 25; -fx-background-radius: 25;" stylesheets="@../resources/estilos/Styles.css" type="VBox" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.aaguilar.system.controller.ControllerLogin">
+<VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="550.0" prefWidth="400.0" spacing="20.0" style="-fx-border-radius: 25; -fx-background-radius: 25;" stylesheets="@../resources/estilos/Styles.css" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.aaguilar.system.controller.ControllerLogin">
     <padding>
         <Insets bottom="10.0" left="20.0" right="20.0" top="10.0" />
     </padding>
@@ -37,4 +37,4 @@
           <DropShadow height="18.0" radius="8.5" width="18.0" />
         </effect>
     </Button>
-</fx:root>
+</VBox>

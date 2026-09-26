@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/HT1-Login-B4.iml" filepath="$PROJECT_DIR$/HT1-Login-B4.iml" />
+      <module fileurl="file://$PROJECT_DIR$/HT-Login-B.iml" filepath="$PROJECT_DIR$/HT-Login-B.iml" />
     </modules>
   </component>
 </project>

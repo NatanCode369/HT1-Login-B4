@@ -1,6 +1,7 @@
 package org.aaguilar.system.controller;
 
 import javafx.fxml.FXML;
+import javafx.scene.control.Hyperlink;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import org.aaguilar.system.utils.AlertInformation;
